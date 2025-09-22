@@ -13,3 +13,24 @@ body{
     background-color: aqua;
     color: darkblue;
 }
+
+.container{
+    max-width: 1140px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 19px;
+}
+
+.card{
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 48px;
+}
+
+.card img{
+    width: 100%;
+    object-fit: border;
+    height: 100%;
+    border-radius: 15px;
+}

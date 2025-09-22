@@ -17,5 +17,19 @@
     </head>
     <body>
         <h1>Здравствуйте</h1>
+        <a href="{{route('second')}}">Вторая страница</a>
+        <a href="/third">Третья страница</a>
+        <div class="container">
+            @for($i=0; $i<=10; $i++)
+                <div class="card">
+                     <img src="{{ Vite::asset('resources/img/cats-'.$i.'.jpg') }}">
+                    <h2>Товар {{$i}}</h2>
+                    <p>Описание товара</p>
+                    @if($i == 3)
+                         <p class="new">Новинка!</p>
+                    @endif
+                </div>
+            @endfor
+        </div>
     </body>
 </html>
