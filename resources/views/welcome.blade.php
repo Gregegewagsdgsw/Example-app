@@ -19,6 +19,7 @@
         <h1>Здравствуйте</h1>
         <a href="{{route('second')}}">Вторая страница</a>
         <a href="/third">Третья страница</a>
+        <a href="/home">Дом</a>
         <div class="container">
             @for($i=0; $i<=10; $i++)
                 <div class="card">
