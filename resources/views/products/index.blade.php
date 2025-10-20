@@ -9,9 +9,14 @@
 <body>
     <header>
         <h1>Каталог товаров</h1>
+        <p>{{$buyer->user->name}}</p>
+        <p>{{$buyer->address}}</p>
     </header>
     <main>
         <a href="{{route('products.create')}}">Создание товара</a>
+        @foreach($categories as $category)
+            <h2>{{$category -> name}}</h2>
+        @endforeach
         <div class="container">
             @foreach($products as $product)
                 <div class="card">
@@ -20,6 +25,16 @@
                     </h2>
                     <p>{{ $product->price }}</p>
                     <p>{{ $product->description }}</p>
+                    <p>{{$product->category->name}}</p>
+                    <div>
+                        @foreach($product->features as $feature)
+                            <p>
+                                {{$feature->name}}
+                                {{$feature->pivot->value}}
+                                {{$feature->unit}}
+                            </p>
+                        @endfor
+                    </div>
                     <form method="POST" action="{{ route('products.destroy', $product -> id) }}">
                         @csrf
                         @method('delete')
